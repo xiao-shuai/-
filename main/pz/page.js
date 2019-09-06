@@ -4,6 +4,7 @@ import {
      createAppContainer,
      createStackNavigator 
     } from 'react-navigation';
+ import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityIcons'
 import Main from '../main/Main'
 import Gonggao from '../main/Gonggao'
 import Gonggao_xq from '../main/Gonggao_xq'
@@ -17,7 +18,52 @@ import Wangdianinfo from '../main/Wangdianinfo'
 import Zhiyin from '../main/Zhiyin'
 import Zhiyinxq from '../main/Zhiyinxq'
 import Jieguo from '../main/Jieguo'
+import My from '../main/My'
+import Cha from '../main/Cha'
+import  {global} from './styles'
+const DDr=createBottomTabNavigator(
+  {
+      Main: Main,
+      Cha:Cha,
+      My:My,
+      
+    },
+    {
+      defaultNavigationOptions: ({ navigation }) => ({
+        tabBarIcon: ({ focused, horizontal, tintColor }) => {
+          const { routeName } = navigation.state;
+         
+          let iconName;
+          if (routeName === 'Main') {
+            iconName = 'flower-poppy';
+            // Sometimes we want to add badges to some icons. 
+            // You can check the implementation below.
+          //   IconComponent = HomeIconWithBadge; 
+          } else if (routeName === 'Cha') {
+               iconName = `flower`;
+          } else if (routeName==='My'){
+              iconName=`flower-outline`
+          }
+  
+          // You can return any component that you like here!
+          return <MaterialCommunityIcons name={iconName} style={{fontSize:25,color:focused?global.t_color:global.t_hui}}/>;
+        },
+      }),
+      tabBarOptions: {
+        activeTintColor: global.t_color,
+        inactiveTintColor: 'gray',
+      },
+    }
+)
+
  const THIS_PAGE=createStackNavigator({
+   Btm:{
+     screen:DDr,
+     navigationOptions:()=>({
+      header:null,
+      headerBackTitle:null,
+  })
+   },
     Main:{
         screen:Main,
         navigationOptions:()=>({

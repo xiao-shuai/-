@@ -7,6 +7,8 @@
     "test": "jest"
   },
   "dependencies": {
+    "mobx": "^5.13.0",
+    "mobx-react": "^5.4.3",
     "react": "16.8.3",
     "react-native": "0.59.9",
     "react-native-datepicker": "^1.7.2",
@@ -21,6 +23,7 @@
   },
   "devDependencies": {
     "@babel/core": "^7.5.5",
+    "@babel/plugin-proposal-decorators": "^7.4.4",
     "@babel/runtime": "^7.5.5",
     "babel-jest": "^24.8.0",
     "jest": "^24.8.0",

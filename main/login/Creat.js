@@ -15,7 +15,7 @@ import Ionicons from 'react-native-vector-icons/Ionicons'
 import {Button,ListItem,Input,CheckBox} from 'react-native-elements'
 import { Global } from '@jest/types';
 import { KeyboardAwareScrollView } from 'react-native-keyboard-aware-scroll-view'
-
+import { NavigationActions } from 'react-navigation';
 class Creat extends Component {
     constructor(props){
         super(props)
@@ -30,7 +30,7 @@ creat=()=>{
         return Alert.alert('提示','请输入密码',[{'text':'确定',onPress:()=>{}}])
     }else {
         fetch('https://www.easy-mock.com/mock/5d3c363bf0de8870c9ba1b18/zhegnfu/creataccount',{
-            method:'POSt'
+            method:'POST'
         }).then(res=>res.json())
         .then(res=>{})
         .catch(err=>{})
