@@ -15,6 +15,7 @@ import Ionicons from 'react-native-vector-icons/Ionicons'
 import Swiper from 'react-native-swiper'
 import {Button} from 'react-native-elements'
 import MapView from 'react-native-maps'
+import SplashScreen from 'react-native-splash-screen';
 import { NavigationActions } from 'react-navigation';
 // import console = require('console');
 class Main extends Component{
@@ -52,6 +53,7 @@ class Main extends Component{
     ).catch(err=>{})
  }  
  componentDidMount(){
+    SplashScreen.hide(); //
    fetch('https://www.easy-mock.com/mock/5d3c363bf0de8870c9ba1b18/zhegnfu/someinfo')
    .then(res=>res.json())
    .then(res=>{})
@@ -243,14 +245,14 @@ show_exit=()=>{
           </TouchableOpacity>
          </View>
         
-        <MapView initialRegion={{
+        {/* <MapView initialRegion={{
       latitude: 40.0691300000,
       longitude:116.4037020000,
       latitudeDelta: 0.0922,
       longitudeDelta: 0.0421,
     }} style={{width:'100%',height:200,marginTop:20}}>
             
-        </MapView>
+        </MapView> */}
 
          </View>
          {/*  */}
