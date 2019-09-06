@@ -29,7 +29,7 @@ class Yuebz extends Component {
 
    })
 
-   Alert.alert('请填写完整信息','',[{'text':'确定'}])    
+   Alert.alert('提示','请填写完整信息',[{'text':'确定'}])    
   }  
     render(){
         return(
@@ -44,8 +44,8 @@ class Yuebz extends Component {
                  <Text style={{fontSize:16}}>户口所在地</Text>
                  </View>
               
-               <TextInput placeholder='请选择' style={{
-                   marginLeft:'5%',fontSize:16
+               <TextInput placeholder='请输入户口所在地' style={{
+                   marginLeft:'5%',fontSize:16,width:global.g_w*.6
                }} />
              </View>
              
@@ -53,8 +53,8 @@ class Yuebz extends Component {
                  <View style={{width:'25%'}}>
                  <Text style={{fontSize:16}}>拼音姓</Text>
                  </View>
-               <TextInput placeholder='请选择' style={{
-                   marginLeft:'5%',fontSize:16
+               <TextInput placeholder='请输入拼音姓' style={{
+                   marginLeft:'5%',fontSize:16,width:global.g_w*.6
                }} />
              </View>
 
@@ -62,8 +62,8 @@ class Yuebz extends Component {
                  <View style={{width:'25%'}}>
                  <Text style={{fontSize:16}}>拼音名</Text>
                  </View>
-               <TextInput placeholder='请选择' style={{
-                   marginLeft:'5%',fontSize:16
+               <TextInput placeholder='请输入拼音名' style={{
+                   marginLeft:'5%',fontSize:16,width:global.g_w*.6
                }} />
              </View>
 
@@ -71,8 +71,8 @@ class Yuebz extends Component {
                  <View style={{width:'25%'}}>
                  <Text style={{fontSize:16}}>中文姓</Text>
                  </View>
-               <TextInput placeholder='请选择' style={{
-                   marginLeft:'5%',fontSize:16
+               <TextInput placeholder='请输入中文姓' style={{
+                   marginLeft:'5%',fontSize:16,width:global.g_w*.6
                }} />
              </View>
 
@@ -80,8 +80,8 @@ class Yuebz extends Component {
                  <View style={{width:'25%'}}>
                  <Text style={{fontSize:16}}>中文名</Text>
                  </View>
-               <TextInput placeholder='请选择' style={{
-                   marginLeft:'5%',fontSize:16
+               <TextInput placeholder='请输入中文名' style={{
+                   marginLeft:'5%',fontSize:16,width:global.g_w*.6
                }} />
              </View>
 
@@ -89,8 +89,8 @@ class Yuebz extends Component {
                  <View style={{width:'25%'}}>
                  <Text style={{fontSize:16}}>身份证号</Text>
                  </View>
-               <TextInput placeholder='请选择' style={{
-                   marginLeft:'5%',fontSize:16
+               <TextInput placeholder='请输入身份证号码' style={{
+                   marginLeft:'5%',fontSize:16,width:global.g_w*.6
                }} />
              </View>
 
@@ -98,8 +98,8 @@ class Yuebz extends Component {
                  <View style={{width:'25%'}}>
                  <Text style={{fontSize:16}}>手机号</Text>
                  </View>
-               <TextInput placeholder='请选择' style={{
-                   marginLeft:'5%',fontSize:16
+               <TextInput placeholder='请输入手机号' style={{
+                   marginLeft:'5%',fontSize:16,width:global.g_w*.6
                }} />
              </View>
 
@@ -110,16 +110,16 @@ class Yuebz extends Component {
                  <View style={{width:'25%'}}>
                  <Text style={{fontSize:16}}>手机号</Text>
                  </View>
-               <TextInput placeholder='请选择' style={{
-                   marginLeft:'5%',fontSize:16
+               <TextInput placeholder='紧急联系人手机号' style={{
+                   marginLeft:'5%',fontSize:16,width:global.g_w*.6
                }} />
              </View>
              <View style={styles.item_v}>
                  <View style={{width:'25%'}}>
                  <Text style={{fontSize:16}}>姓名</Text>
                  </View>
-               <TextInput placeholder='请选择' style={{
-                   marginLeft:'5%',fontSize:16
+               <TextInput placeholder='紧急联系人姓名' style={{
+                   marginLeft:'5%',fontSize:16,width:global.g_w*.6
                }} />
              </View>
              <View style={styles.t}>
@@ -187,7 +187,8 @@ class Yuebz extends Component {
 export default Yuebz
 const  styles=StyleSheet.create({
     item_v:{
-        padding:20,flexDirection:'row',borderBottomColor:global.t_bg,borderBottomWidth:1
+        padding:20,flexDirection:'row',borderBottomColor:global.t_bg,borderBottomWidth:1,
+        alignItems:'center'
     },
     t:{
         paddingLeft:20,

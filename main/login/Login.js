@@ -24,7 +24,7 @@ class Login extends Component {
         }
     }
 password_forget=()=>{
-  Alert.alert('请发至CZMM至106698746098375,进行密码重置')
+  Alert.alert('提示','请发至CZMM至106698746098375,进行密码重置',[{'text':'知道了'}])
 }
 login_in=()=>{
     if(this.state.account==undefined){
