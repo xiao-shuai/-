@@ -152,21 +152,21 @@ show_exit=()=>{
                     
                     is_login?this.show_ban():this.show_login()
                 }} style={{borderRadius:10}}>
-                <Image source={require('../images/lun1.png')}  resizeMode='stretch' style={styles.lunb_img}/>
+                <Image source={require('../images/luna.png')}  resizeMode='stretch' style={styles.lunb_img}/>
                 </TouchableOpacity>
 
                 <TouchableOpacity onPress={()=>{
                  
                     is_login?this.show_ban():this.show_login()
                 }}>
-                <Image source={require('../images/lun2.png')}  resizeMode='stretch' style={styles.lunb_img}/>
+                <Image source={require('../images/lunb.png')}  resizeMode='stretch' style={styles.lunb_img}/>
                 </TouchableOpacity>
 
                 <TouchableOpacity onPress={()=>{
                    
                     is_login?this.show_ban():this.show_login()
                 }}>
-                <Image source={require('../images/lun3.png')}  resizeMode='stretch' style={styles.lunb_img}/>
+                <Image source={require('../images/lunc.png')}  resizeMode='stretch' style={styles.lunb_img}/>
                 </TouchableOpacity>
             </Swiper>
          </View>
