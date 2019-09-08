@@ -8,12 +8,15 @@ import {
     StyleSheet,
     ActivityIndicator,
     TextInput,AsyncStorage,
-    SafeAreaView
+    SafeAreaView,Alert
 } from 'react-native'
 import {global} from '../pz/styles'
 import Ionicons from 'react-native-vector-icons/Ionicons'
 import {Button,ListItem,SearchBar} from 'react-native-elements'
+import {inject,observer} from 'mobx-react'
 
+@inject(["mbx"])
+@observer // 监听当前组件
 class Cha extends Component {
     constructor(props){
         super(props)
@@ -28,6 +31,17 @@ componentWillMount(){
   .catch()
 
 }
+show_login=()=>{
+    Alert.alert('提示','您暂未登录，请登录！',[{'text':'取消',onPress:()=>{}},
+    {'text':'确定',onPress:()=>{this.login()}}])
+   }
+componentDidMount(){
+ const a=this.props.mbx.login
+
+   a?'':this.show_login()
+
+}
+
 cha=()=>{
     this.setState({show:true})
     fetch('https://www.fastmock.site/mock/bf8e3c1a546ac8d4d184d3b0670cf90c/lanqiudaren/record')
@@ -40,7 +54,7 @@ cha=()=>{
     })
 }
     render(){
-        
+        const login=this.props.mbx.login
         return(
             <SafeAreaView style={{flex:1,alignItems:'center'}}>
                <View style={{width:global.g_w,height:global.g_h*.1,backgroundColor:global.t_color}}>
@@ -58,7 +72,10 @@ cha=()=>{
                    inputContainerStyle={{backgroundColor:'#F2F3F4'}}
                    returnKeyType='search'
                    onSubmitEditing={()=>{
+                      login?
                       this.cha()
+                      :
+                      this.show_login()
                    }}
                  />
 

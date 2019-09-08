@@ -21,6 +21,8 @@ import Jieguo from '../main/Jieguo'
 import My from '../main/My'
 import Cha from '../main/Cha'
 import  {global} from './styles'
+import Result from '../main/Result'
+import Jian_yi from '../main/Jian_yi'
 const DDr=createBottomTabNavigator(
   {
       Main: Main,
@@ -35,14 +37,14 @@ const DDr=createBottomTabNavigator(
          
           let iconName;
           if (routeName === 'Main') {
-            iconName = 'flower-poppy';
+            iconName = 'bank';
             // Sometimes we want to add badges to some icons. 
             // You can check the implementation below.
           //   IconComponent = HomeIconWithBadge; 
           } else if (routeName === 'Cha') {
-               iconName = `flower`;
+               iconName = `calendar`;
           } else if (routeName==='My'){
-              iconName=`flower-outline`
+              iconName=`account`
           }
   
           // You can return any component that you like here!
@@ -154,6 +156,20 @@ const DDr=createBottomTabNavigator(
             title:'预约查询',
           
             // header:null
+        })
+      },
+      Result:{
+        screen:Result, 
+        navigationOptions:()=>({
+            title:'移民服务',
+          
+            // header:null
+        })
+      },
+      Jian_yi:{
+        screen:Jian_yi, 
+        navigationOptions:()=>({
+            title:'意见反馈',
         })
       },
       

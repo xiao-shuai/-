@@ -17,7 +17,9 @@ import {Button} from 'react-native-elements'
 import MapView from 'react-native-maps'
 import SplashScreen from 'react-native-splash-screen';
 import { NavigationActions } from 'react-navigation';
-// import console = require('console');
+import {inject,observer} from 'mobx-react'
+@inject(["mbx"])
+@observer // 监听当前组件
 class Main extends Component{
     constructor(props){
         super(props)
@@ -48,6 +50,7 @@ class Main extends Component{
          //   this.props.navigation.reset([NavigationActions.navigate({ routeName: 'Login' })], 0)
          }else{
              this.setState({is_login:true})
+           this.props.mbx.change_login(true)
          }
     }
     ).catch(err=>{})
@@ -73,20 +76,11 @@ class Main extends Component{
     Alert.alert('您暂无该证件！','',[{'text':'取消',onPress:()=>{}},
     {'text':'去办证',onPress:()=>{this.ban()}}])
    }
-show_exit=()=>{
-    Alert.alert('确定退出登录吗?','',[{'text':'取消',onPress:()=>{}},
-    {'text':'确定',onPress:()=>{
-        // this.ban()
-        fetch('https://www.easy-mock.com/mock/5d3c363bf0de8870c9ba1b18/zhegnfu/loginout',{method:'POST'})
-        .then(res=>res.json())
-        .then(res=>{})
-        .catch(res=>{})
-        this.props.navigation.reset([NavigationActions.navigate({ routeName: 'Login' })], 0)
-        AsyncStorage.removeItem('yes')
-    }}])
-}
+
     render(){
         const is_login=this.state.is_login
+        console.log('login:12',this.props.mbx.login);
+        
       return (
         <SafeAreaView style={{flex:1}}>
             <View style={styles.top_tit}>
@@ -94,7 +88,7 @@ show_exit=()=>{
          </View>
             <ScrollView showsVerticalScrollIndicator={false}>
          
-         <View style={styles.dl_big_v}>
+         {/* <View style={styles.dl_big_v}>
              <View style={{flexDirection:'row',alignItems:'center'}}>
              {
              is_login?
@@ -123,6 +117,7 @@ show_exit=()=>{
              </View>
              </TouchableOpacity>
          </View>
+        */}
          {/*  */}
          <TouchableOpacity onPress={()=>{
              this.props.navigation.navigate('Gonggao')

@@ -39,7 +39,7 @@ login_in=()=>{
         })
         .catch(err=>{})
         AsyncStorage.setItem('yes','ok')
-        this.props.navigation.reset([NavigationActions.navigate({ routeName: 'Main' })], 0)
+        this.props.navigation.reset([NavigationActions.navigate({ routeName: 'Btm' })], 0)
     }
 }
     render(){
