@@ -37,14 +37,14 @@ const DDr=createBottomTabNavigator(
          
           let iconName;
           if (routeName === 'Main') {
-            iconName = 'bank';
+               iconName = 'bank';
             // Sometimes we want to add badges to some icons. 
             // You can check the implementation below.
           //   IconComponent = HomeIconWithBadge; 
           } else if (routeName === 'Cha') {
                iconName = `calendar`;
           } else if (routeName==='My'){
-              iconName=`account`
+               iconName=`account`
           }
   
           // You can return any component that you like here!

@@ -147,21 +147,21 @@ class Main extends Component{
                     
                     is_login?this.show_ban():this.show_login()
                 }} style={{borderRadius:10}}>
-                <Image source={require('../images/luna.png')}  resizeMode='stretch' style={styles.lunb_img}/>
+                <Image source={require('../images/luna.jpeg')}  resizeMode='stretch' style={styles.lunb_img}/>
                 </TouchableOpacity>
 
                 <TouchableOpacity onPress={()=>{
                  
                     is_login?this.show_ban():this.show_login()
                 }}>
-                <Image source={require('../images/lunb.png')}  resizeMode='stretch' style={styles.lunb_img}/>
+                <Image source={require('../images/lunb.jpeg')}  resizeMode='stretch' style={styles.lunb_img}/>
                 </TouchableOpacity>
 
                 <TouchableOpacity onPress={()=>{
                    
                     is_login?this.show_ban():this.show_login()
                 }}>
-                <Image source={require('../images/lunc.png')}  resizeMode='stretch' style={styles.lunb_img}/>
+                <Image source={require('../images/lunc.jpeg')}  resizeMode='stretch' style={styles.lunb_img}/>
                 </TouchableOpacity>
             </Swiper>
          </View>
